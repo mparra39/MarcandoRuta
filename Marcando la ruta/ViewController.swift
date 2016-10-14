@@ -85,6 +85,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             if let lastLocation = locations.last {
                 
+                //obteniendo la distancia entre puntos
                 let distance = startLocation.distance(from: lastLocation)
                 let lastLocation = locations.last
                 traveledDistance += distance
@@ -95,10 +96,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 print("STRAIGHT DISTANCE: \(distance)")
                 startLocation = lastLocation
                 
+                //calculando un aproximado de 50 metros
                 if (cincuentaMetros - 0) >= 50 {
                     print("Han pasado 50 metros")
                     cincuentaMetros = 0
                     
+                    //dibujando cuando recorra 50 metros o más
                     let pin = MKPointAnnotation()
                     pin.title = "Lat: \(latitude), Lon \(longitude)"
                     pin.subtitle = "Distancia: \(traveledDistance)"
