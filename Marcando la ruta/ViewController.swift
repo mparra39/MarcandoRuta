@@ -30,23 +30,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manejador.desiredAccuracy = kCLLocationAccuracyBest
         manejador.requestWhenInUseAuthorization()
         
-//        let latitude:CLLocationDegrees = (manejador.location?.coordinate.latitude)!
-//        
-//        let longitude:CLLocationDegrees = (manejador.location?.coordinate.longitude)!
-//        
-//        let latDelta:CLLocationDegrees = 0.02       //zoom
-//        
-//        let lonDelta:CLLocationDegrees = 0.02       //zoom
-//        
-//        let span = MKCoordinateSpanMake(latDelta, lonDelta)
-//        
-//        let location = CLLocationCoordinate2DMake(latitude, longitude)
-//        
-//        let region = MKCoordinateRegionMake(location, span)
-//        
-//        mapa.setRegion(region, animated: false)
-
     }
+    
+    //Los tres botones para cambiar el tipo de mapa
     @IBAction func normalMapa(_ sender: AnyObject) {
         self.mapa.mapType = .standard
     }
@@ -118,6 +104,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
         if status == .authorizedWhenInUse {
@@ -128,8 +115,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             mapa.showsUserLocation = false
         }
         
-        
     }
+    
 
 }
 
